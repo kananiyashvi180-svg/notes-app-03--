@@ -1,4 +1,5 @@
 const express = require("express");
+const noteRoutes = require("./routes/note.routes");
 
 const app = express();
 
@@ -10,5 +11,7 @@ app.get("/", (req, res) => {
     message: "Notes API Running Successfully",
   });
 });
+
+app.use("/api/notes", noteRoutes);
 
 module.exports = app;
